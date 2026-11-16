@@ -1,0 +1,15 @@
+int n;
+int fact(int k) {
+    if (k < 2) { return 1; }
+    return k * fact(k - 1);
+}
+boolean esPar(int x) { return x % 2 == 0 || x == 0 - 2; }
+void main() {
+    int r;
+    n = 5;
+    r = fact(n);
+    while (r > 0 && esPar(r)) {
+        r = r - 2;
+        if (r == 4) { n = n + 1; } else { n = n - 1; }
+    }
+}

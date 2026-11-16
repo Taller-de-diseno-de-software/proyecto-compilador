@@ -1,0 +1,9 @@
+void main(){
+    int x;
+    boolean m;
+    x = 10;
+    do{
+        x = x - 1;
+        m = x >= 5;
+    }while(m);
+}

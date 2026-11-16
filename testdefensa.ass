@@ -1,0 +1,38 @@
+	.text
+
+	.globl main
+main:
+	enter $48, $0
+	mov $10, %r10
+	mov %r10, -8(%rbp)
+.L1:
+	mov -8(%rbp), %r10
+	mov $1, %r11
+	sub %r11, %r10
+	mov %r10, -16(%rbp)
+	mov -16(%rbp), %r10
+	mov %r10, -8(%rbp)
+	mov -8(%rbp), %r10
+	mov $5, %r11
+	cmp %r11, %r10
+	mov $0, %r11
+	mov $1, %r10
+	cmovl %r10, %r11
+	mov %r11, -24(%rbp)
+	mov -24(%rbp), %r10
+	xor $1, %r10
+	mov %r10, -32(%rbp)
+	mov -32(%rbp), %r10
+	mov %r10, -40(%rbp)
+	mov -40(%rbp), %r10
+	cmp $0, %r10
+	je .L2
+	jmp .L1
+.L2:
+	mov $0, %rax
+	leave
+	ret
+	leave
+	ret
+
+	.section .note.GNU-stack,"",@progbits

@@ -20,6 +20,7 @@ const char *tipoNodoNombre(TipoNodo tipo){
         case NODO_METHOD_CALL: return "METHOD_CALL";
         case NODO_IF: return "IF";
         case NODO_WHILE: return "WHILE";
+        case NODO_DO: return "DO";
         case NODO_RETURN: return "RETURN";
         case NODO_BLOQUE: return "BLOQUE";
         case NODO_ELSE: return "ELSE";

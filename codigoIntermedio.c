@@ -390,6 +390,19 @@ static void genIf(nodoAST *s) {
     emitirEtiqueta(fin);
 }
 
+// DO: hijos[0]=cuerpo, hijos[1]=condicion. La condicion se reevalua en cada vuelta. El bloque se ejecuta una primera vez.
+static void genDo(nodoAST *s) {
+    Operando inicio = nuevaEtiqueta();
+    Operando fin = nuevaEtiqueta();
+
+    emitirEtiqueta(inicio);
+    genBloque(s->hijos[0]);
+    Operando condicion = genExpr(s->hijos[1]);
+    emitirSalto(IR_JMPF, condicion, fin);
+    emitirSalto(IR_JUMP, operandoNone(), inicio);
+    emitirEtiqueta(fin);
+}
+
 // WHILE: hijos[0]=condicion, hijos[1]=cuerpo. La condicion se reevalua en cada vuelta.
 static void genWhile(nodoAST *s) {
     Operando inicio = nuevaEtiqueta();
@@ -421,6 +434,7 @@ static void genStmt(nodoAST *s) {
         case NODO_METHOD_CALL: genLlamada(s->hijos[0]); break; // resultado descartado
         case NODO_IF:          genIf(s); break;
         case NODO_WHILE:       genWhile(s); break;
+        case NODO_DO:          genDo(s); break;
         case NODO_RETURN:      genReturn(s); break;
         case NODO_BLOQUE:      genBloque(s->hijos[0]); break;
         default:

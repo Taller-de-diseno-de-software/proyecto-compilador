@@ -1,0 +1,12 @@
+void main() {
+    int a;
+    int b;
+    boolean p;
+    boolean q;
+    a = 1;
+    b = 2;
+    p = a < b && b > 0;
+    q = p || a == b && !p;
+    if (a < b || b < a && p) { a = 0; }
+    while (p && !q) { p = false; }
+}

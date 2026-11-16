@@ -110,6 +110,12 @@ FLOAT_LITERAL {DIGIT}+\.{DIGIT}+
                     return VOID;
                 }
 
+"do"          {
+                    LOG_TOKEN("DO    %s\n", yytext);
+                    yylval.str = strdup(yytext);
+                    return DO;
+                }
+
 "while"         {
                     LOG_TOKEN("WHILE    %s\n", yytext);
                     yylval.str = strdup(yytext);
@@ -174,6 +180,12 @@ FLOAT_LITERAL {DIGIT}+\.{DIGIT}+
                    LOG_TOKEN("OP_MENOR  %s\n", yytext); 
                    yylval.str = strdup(yytext);
                    return OP_MENOR;
+                }
+
+">="             {
+                   LOG_TOKEN("OP_MAYOREQ  %s\n", yytext); 
+                   yylval.str = strdup(yytext);
+                   return OP_MAYOREQ;
                 }
 
 ">"             {

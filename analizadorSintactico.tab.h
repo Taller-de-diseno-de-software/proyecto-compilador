@@ -1,8 +1,8 @@
-/* A Bison parser, made by GNU Bison 3.7.4.  */
+/* A Bison parser, made by GNU Bison 3.8.2.  */
 
 /* Bison interface for Yacc-like parsers in C
 
-   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2020 Free Software Foundation,
+   Copyright (C) 1984, 1989-1990, 2000-2015, 2018-2021 Free Software Foundation,
    Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -16,7 +16,7 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 /* As a special exception, you may create a larger work that contains
    part or all of the Bison parser skeleton and distribute that work
@@ -68,30 +68,32 @@ extern int yydebug;
     RETURN = 263,                  /* RETURN  */
     VOID = 264,                    /* VOID  */
     WHILE = 265,                   /* WHILE  */
-    FLOAT = 266,                   /* FLOAT  */
-    CTE_LOGICA = 267,              /* CTE_LOGICA  */
-    CTE_ENTERA = 268,              /* CTE_ENTERA  */
-    CTE_FLOAT = 269,               /* CTE_FLOAT  */
-    ID = 270,                      /* ID  */
-    OP_SUMA = 271,                 /* OP_SUMA  */
-    OP_PROD = 272,                 /* OP_PROD  */
-    OP_RESTA = 273,                /* OP_RESTA  */
-    OP_DIV = 274,                  /* OP_DIV  */
-    OP_DIVENT = 275,               /* OP_DIVENT  */
-    OP_MENOR = 276,                /* OP_MENOR  */
-    OP_MAYOR = 277,                /* OP_MAYOR  */
-    OP_EQ = 278,                   /* OP_EQ  */
-    OP_AND = 279,                  /* OP_AND  */
-    OP_OR = 280,                   /* OP_OR  */
-    OP_NEG = 281,                  /* OP_NEG  */
-    OP_ASIG = 282,                 /* OP_ASIG  */
-    PUNTO_COMA = 283,              /* PUNTO_COMA  */
-    PAR_IZQ = 284,                 /* PAR_IZQ  */
-    PAR_DER = 285,                 /* PAR_DER  */
-    LLAVE_IZQ = 286,               /* LLAVE_IZQ  */
-    LLAVE_DER = 287,               /* LLAVE_DER  */
-    COMA = 288,                    /* COMA  */
-    SIGNO_MENOS = 289              /* SIGNO_MENOS  */
+    DO = 266,                      /* DO  */
+    FLOAT = 267,                   /* FLOAT  */
+    CTE_LOGICA = 268,              /* CTE_LOGICA  */
+    CTE_ENTERA = 269,              /* CTE_ENTERA  */
+    CTE_FLOAT = 270,               /* CTE_FLOAT  */
+    ID = 271,                      /* ID  */
+    OP_SUMA = 272,                 /* OP_SUMA  */
+    OP_PROD = 273,                 /* OP_PROD  */
+    OP_RESTA = 274,                /* OP_RESTA  */
+    OP_DIV = 275,                  /* OP_DIV  */
+    OP_DIVENT = 276,               /* OP_DIVENT  */
+    OP_MENOR = 277,                /* OP_MENOR  */
+    OP_MAYOREQ = 278,              /* OP_MAYOREQ  */
+    OP_MAYOR = 279,                /* OP_MAYOR  */
+    OP_EQ = 280,                   /* OP_EQ  */
+    OP_AND = 281,                  /* OP_AND  */
+    OP_OR = 282,                   /* OP_OR  */
+    OP_NEG = 283,                  /* OP_NEG  */
+    OP_ASIG = 284,                 /* OP_ASIG  */
+    PUNTO_COMA = 285,              /* PUNTO_COMA  */
+    PAR_IZQ = 286,                 /* PAR_IZQ  */
+    PAR_DER = 287,                 /* PAR_DER  */
+    LLAVE_IZQ = 288,               /* LLAVE_IZQ  */
+    LLAVE_DER = 289,               /* LLAVE_DER  */
+    COMA = 290,                    /* COMA  */
+    SIGNO_MENOS = 291              /* SIGNO_MENOS  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -106,7 +108,7 @@ union YYSTYPE
     char *str;
     
 
-#line 110 "analizadorSintactico.tab.h"
+#line 112 "analizadorSintactico.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -117,6 +119,8 @@ typedef union YYSTYPE YYSTYPE;
 
 extern YYSTYPE yylval;
 
+
 int yyparse (void);
+
 
 #endif /* !YY_YY_ANALIZADORSINTACTICO_TAB_H_INCLUDED  */

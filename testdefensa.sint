@@ -1,0 +1,31 @@
+DECLS
+  DECLS
+    METHOD : main
+      BLOQUE
+        VAR_DECL
+          VAR
+            TYPE : int
+            IDS : x
+          VAR_DECL
+            VAR
+              TYPE : boolean
+              IDS : m
+        STATEMENT
+          OP_ASIG : x
+            LITERAL : 10
+          STATEMENT
+            DO
+              BLOQUE
+                STATEMENT
+                  OP_ASIG : x
+                    RESTA
+                      ID : x
+                      LITERAL : 1
+                  STATEMENT
+                    OP_ASIG : m
+                      NEG
+                        MENOR
+                          ID : x
+                          LITERAL : 5
+              ID : m
+            STATEMENT

@@ -289,6 +289,14 @@ static void visitarSentencia(nodoAST *sentencia){
             errorSemantico = 1;
         }
         visitarBloque(sentencia->hijos[1]);
+    }else if(sentencia->tipo == NODO_DO){
+        // TODO: hijos[0]=BLOQUE ; hijos[1]=EXPR debe ser bool
+        TipoDato tipoCond = visitarExpresion(sentencia->hijos[1]);
+        if(tipoCond != TIPO_BOOL && tipoCond != TIPO_INDEFINIDO){
+            fprintf(stderr,"Error semántico: la condición del while debe ser booleana\n");
+            errorSemantico = 1;
+        }
+        visitarBloque(sentencia->hijos[0]);
     }else if(sentencia->tipo == NODO_RETURN){
         nodoAST *envoltorioExpr = sentencia->hijos[0];
 

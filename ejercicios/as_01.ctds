@@ -1,0 +1,46 @@
+int total;
+extern void printInt(int x);
+int max(int a, int b) {
+    int m;
+    m = b;
+    if (a > b) { m = a; }
+    return m;
+}
+void main() {
+    int i;
+    i = 0;
+    while (i < 3) {
+        total = total + max(i, 1) / 2;
+        i = i + 1;
+    }
+    printInt(total);
+}
+
+// ---- Codigo intermedio (.ci) ----
+// enter max
+// m = b
+// t1 = a > b
+// ifFalse t1 goto L1
+// m = a
+// L1:
+// return m
+// leave
+// enter main
+// i = 0
+// L2:
+// t2 = i < 3
+// ifFalse t2 goto L3
+// param i
+// param 1
+// t3 = call max, 2
+// t4 = t3 / 2
+// t5 = total + t4
+// total = t5
+// t6 = i + 1
+// i = t6
+// goto L2
+// L3:
+// param total
+// call printInt, 1
+// return
+// leave
